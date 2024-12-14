@@ -21,16 +21,17 @@
 
 **Образы и папки должны располагаться ближе к корню раздела диска, в пути не должно быть пробелов и кириллицы**
 
+![image_2024-12-09_22-40-19](https://github.com/user-attachments/assets/92752c58-7b53-4c3e-941b-1bc686a16023)
+
+
+### 3) Замена в образе анимации загрузки на свою
+Необходимо включить проверку фоновых рисунков при загрузке устройства. Данная настройка активируется с помощью значения true переменной ```config_checkWallpaperAtBoot```, определенной внутри файла ```framework-res.apk```. Данный файл находится в папке /system/framework (для MIK ```/system/system/system/framework```, для adb pull - /system/framework) и для его модификации необходимо декомпилировать приложение с помощью apktool. После декомпиляции в файле ```res/values/bools.xml``` будет требуемая настройка. Необходимо установить значение в true. После этого пересобрать apk, подписать и заменить на устройстве.
+
 ![image_2024-12-09_22-56-10](https://github.com/user-attachments/assets/2888e9f2-4096-4e82-ab67-ae5df20f44b0)
 
 ![image_2024-12-09_22-55-46](https://github.com/user-attachments/assets/38e6a7fc-4687-472f-93b4-cd0f2b5ff3d3)
 
 ![image_2024-12-09_22-58-48](https://github.com/user-attachments/assets/c0f5353b-ad77-47dd-ba26-fab03de507b0)
-
-### 3) Замена в образе анимации загрузки на свою
-Необходимо включить проверку фоновых рисунков при загрузке устройства. Данная настройка активируется с помощью значения true переменной ```config_checkWallpaperAtBoot```, определенной внутри файла ```framework-res.apk```. Данный файл находится в папке /system/framework (для MIK ```/system/system/system/framework```, для adb pull - /system/framework) и для его модификации необходимо декомпилировать приложение с помощью apktool. После декомпиляции в файле ```res/values/bools.xml``` будет требуемая настройка. Необходимо установить значение в true. После этого пересобрать apk, подписать и заменить на устройстве.
-
-![image_2024-12-09_22-55-46](https://github.com/user-attachments/assets/57868d52-b56f-47b5-92e1-57c703b360f7)
 
 Анимация загрузки представлена в виде файла ```bootanimation.zip```, размещенного в ``` /system/system/system/media/bootanimation.zip ```
 
